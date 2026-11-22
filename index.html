@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="te"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TA Bill Maker – Tour</title>
+<style>
+:root{--bg:#eef1f5;--card:#fff;--tx:#14181f;--mu:#5b6472;--ac:#1d4ed8;--bd:#cfd6e0;--in:#fff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12151b;--card:#1b2029;--tx:#e8ebf0;--mu:#9aa4b2;--ac:#6ea0ff;--bd:#323b4a;--in:#10141a}}
+:root[data-theme="dark"]{--bg:#12151b;--card:#1b2029;--tx:#e8ebf0;--mu:#9aa4b2;--ac:#6ea0ff;--bd:#323b4a;--in:#10141a}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font:14px/1.45 system-ui,"Noto Sans Telugu",Arial,sans-serif}
+#app{display:flex;gap:16px;padding:14px;align-items:flex-start}
+#panel{width:430px;flex:none;position:sticky;top:8px;max-height:calc(100vh - 16px);overflow:auto}
+#prev{flex:1;min-width:0;overflow-x:auto}
+.top{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:10px}
+.top h1{font-size:17px;margin:0;flex:1}
+button{font:inherit;border:1px solid var(--bd);background:var(--card);color:var(--tx);border-radius:8px;padding:7px 12px;cursor:pointer}
+button.pr{background:var(--ac);border-color:var(--ac);color:#fff;font-weight:600}
+details{background:var(--card);border:1px solid var(--bd);border-radius:10px;margin-bottom:10px}
+summary{padding:10px 12px;font-weight:600;cursor:pointer}
+.sec{padding:0 12px 12px}
+.sw{display:flex;gap:8px;align-items:center;padding:8px 10px;margin-bottom:8px;background:var(--bg);border-radius:8px;font-weight:600;color:var(--ac)}
+fieldset{border:0;padding:0;margin:0;min-width:0}fieldset:disabled{opacity:.45}
+label{display:block;font-size:12px;color:var(--mu);margin-bottom:6px}
+input[type=text],input[type=date]{width:100%;font:inherit;color:var(--tx);background:var(--in);border:1px solid var(--bd);border-radius:6px;padding:6px 8px}
+input[type=checkbox]{width:16px;height:16px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:0 8px}
+.g5{display:grid;grid-template-columns:repeat(5,1fr);gap:5px;margin-bottom:6px}
+.g5 input{padding:5px 4px;font-size:12px}
+.rc{border:1px dashed var(--bd);border-radius:8px;padding:6px;margin-bottom:8px}
+.g3,.g4{display:grid;gap:5px;margin-bottom:6px}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}.g3 input,.g4 input{padding:5px 6px;font-size:12px}.jb{border:1px solid var(--ac);border-radius:10px;padding:8px;margin-bottom:8px}.hint{font-size:12px;color:var(--mu);margin:2px 0 8px}
+.ck{display:flex;gap:8px;align-items:center;font-size:13px;color:var(--tx);margin-bottom:4px}
+/* ---- paper ---- */
+.pg{width:210mm;min-height:297mm;margin:0 auto 14px;padding:13mm 15mm;background:#fff;color:#000;font:10pt/1.6 Arial,sans-serif;box-shadow:0 2px 10px #0003;page-break-after:always;position:relative}
+.pg h2{font-size:12.5pt;text-align:center;margin:6px 0 2px}
+.c{text-align:center}.b{font-weight:700}.sm{font-size:8pt}
+.v{display:inline-block;border-bottom:1px dotted #000;min-width:70px;padding:0 3px;font-weight:600;vertical-align:bottom;min-height:1.1em}
+.id{display:grid;grid-template-columns:1fr 1fr;gap:8px 20px;margin:8px 0}
+table.t{width:100%;border-collapse:collapse;font-size:8pt;text-align:center;margin:6px 0}
+.t td,.t th{border:1px solid #000;padding:2px 3px;height:23px;word-break:break-word}
+.vt{padding:0!important;width:5%}.vt div{font-size:8pt;writing-mode:vertical-rl;transform:rotate(180deg);margin:0 auto;font-weight:700;text-align:center;max-height:100%}
+.tot{display:grid;grid-template-columns:215px 1fr 24px 140px;font-weight:700;margin:5px 0;align-items:end}
+.net{border:1.5px solid #000;padding:5px 8px;margin-top:8px;font-weight:700}
+.it{display:flex;gap:6px;margin:2px 0}.it>b{width:22px;flex:none}.sub{margin-left:28px}
+.pb{font-family:"Times New Roman",serif;font-size:11pt;line-height:2}
+@media print{#nav{display:none!important}#prev{zoom:1!important;display:block!important}body{background:#fff}#panel,.top{display:none}#app{display:block;padding:0}#prev{overflow:visible}.pg{margin:0;box-shadow:none;width:210mm}@page{size:A4;margin:0}}
+#nav{display:none}@media (max-width:980px){#app{flex-direction:column;padding:10px 10px 74px}#panel{width:100%;position:static;max-height:none}#nav{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:9;background:var(--card);border-top:1px solid var(--bd);padding-bottom:env(safe-area-inset-bottom,0px)}#nav button{flex:1;border:0;border-radius:0;background:none;padding:13px 2px;font-size:13px}#nav button.on{color:var(--ac);font-weight:700;box-shadow:inset 0 -3px var(--ac)}#app[data-t="0"] #prev,#app[data-t="1"] #prev,#app[data-t="2"] #prev{display:none}#app[data-t="3"] #panel details,#app[data-t="0"] #panel details:not(.t0),#app[data-t="1"] #panel details:not(.t1),#app[data-t="2"] #panel details:not(.t2){display:none}summary{pointer-events:none}input[type=text],input[type=date]{font-size:16px!important}.g3,.g4,.g5{grid-template-columns:1fr 1fr}.sw{font-size:15px;padding:12px}}
+</style></head><body>
+<div id="app"><div id="panel"></div><div id="prev"></div></div><div id="nav"><button data-tab="0">① Page 1</button><button data-tab="1">② Page 2</button><button data-tab="2">③ Page 3</button><button data-tab="3">👁 Print</button></div>
+<script>
+const $=s=>document.querySelector(s);
+const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+let D={en:[1,0,0],V:{},rows:[{}]};
+try{const x=JSON.parse(localStorage.getItem('tabill_v1')||'null');if(x&&x.V)D=x}catch(e){}
+const save=()=>{try{localStorage.setItem('tabill_v1',JSON.stringify(D))}catch(e){}};
+const HOT=['Stay From','To','Name of Hotel','Daily Rate','Total Paid'],HI=['Date','From','To','Mode','Class entitled','Class travelled','Fare Rs','P'],RD=['Date','From','To','Fare Rs','P','Remarks'];
+const ENC=['Food Bill','Lodge Bill','Tickets / Receipts','Deputation / Training Order','Relieving & Joining Certificate'];
+const P2=[['a1','Air: Exchange voucher arranged by office (Yes/No)'],['a2','Air: Ticket/voucher arranged by'],['r1','Rail: mail/Express/Ordinary train (Yes/No)'],['r2','Rail: return tickets available'],['r3','Rail: return tickets purchased? If not, reason'],['rd','Road: mode of conveyance used'],['s7a','7(a) Absence – Restricted Holidays / Casual Leave'],['s7b','7(b) Not being in camp on Sundays/Holidays'],['s8a','8(a) Free Board only (dates)'],['s8b','8(b) Free Lodging only (dates)'],['s8c','8(c) Boarding and lodging (dates)']];
+const fd=v=>/^\d{4}-\d\d-\d\d$/.test(v||'')?v.split('-').reverse().join('.'):v;const W=n=>{const o='Zero One Two Three Four Five Six Seven Eight Nine Ten Eleven Twelve Thirteen Fourteen Fifteen Sixteen Seventeen Eighteen Nineteen'.split(' '),t='  Twenty Thirty Forty Fifty Sixty Seventy Eighty Ninety'.split(' ');
+ const f=n=>n<20?o[n]:n<100?t[n/10|0]+(n%10?' '+o[n%10]:''):n<1e3?o[n/100|0]+' Hundred'+(n%100?' and '+f(n%100):''):n<1e5?f(n/1e3|0)+' Thousand'+(n%1e3?' '+f(n%1e3):''):n<1e7?f(n/1e5|0)+' Lakh'+(n%1e5?' '+f(n%1e5):''):f(n/1e7|0)+' Crore'+(n%1e7?' '+f(n%1e7):'');return f(Math.round(n))};
+const fi=(k,l,ph)=>`<label>${l}<input type="text" data-k="${k}" value="${esc(D.V[k])}" placeholder="${ph||''}"></label>`;
+const grid=(p,h,n)=>Array.from({length:n},(_,r)=>`<div class="rc"><div class="g5">${h.map((x,c)=>`<input type="text" data-k="${p}${r}_${c}" placeholder="${x}" title="${x}" value="${esc(D.V[p+r+'_'+c])}">`).join('')}</div></div>`).join('');
+const sec=(i,t,body,open)=>`<details class="t${i}" open><summary>${t}</summary><div class="sec"><label class="sw"><input type="checkbox" data-en="${i}" ${D.en[i]?'checked':''}> <b>Page ${i+1}</b> – ఈ పేజీ స్క్రీన్‌పై నింపుతా (Fill on screen)</label><fieldset ${D.en[i]?'':'disabled'} id="fs${i}">${body}</fieldset><div class="hint">${D.en[i]||i==2?'':'టిక్ చేయకపోతే ప్రింట్‌లో ఖాళీగా వస్తుంది – చేతితో రాసుకోవచ్చు.'}</div></div></details>`;
+function panel(){
+ const rows=D.rows.map((r,i)=>`<div class="rc"><div class="top" style="margin-bottom:4px"><b style="font-size:12px;flex:1">Journey ${i+1}</b><button data-act="dup" data-i="${i}" title="Copy this journey just below">⧉ Copy</button><button data-act="ret" data-i="${i}" title="Copy with From/To swapped">⇄ Return</button><button data-act="del" data-i="${i}" title="Delete this journey">✕</button></div><div style="margin-top:4px">${(()=>{const q=s=>{const[k,p]=s.split(':');const dt=/^d\d$/.test(k);const inp=`<input type="${dt?'date':'text'}" data-r="${i}" data-f="${k}" placeholder="${p}" title="${p}" value="${esc(r[k])}">`;return dt?`<label style="margin:0">${p}${inp}</label>`:inp};return`<div class="g3">${['d1:Departure Date','t1:Departure Time','fr:From'].map(q).join('')}</div><div class="g3">${['d2:Arrival Date','t2:Arrival Time','to:To'].map(q).join('')}</div><div class="g4">${['mode:Mode of travel','fare:Fare Paid','km:Distance (KMs)','halt:Duration of Halt'].map(q).join('')}</div>`})()}</div></div>`).join('');
+ $('#panel').innerHTML=`<div class="top"><h1>🧾 TA Bill Maker</h1><button class="pr" id="bp">🖨 Print / PDF</button><button id="br">Reset</button></div>`+
+ sec(0,'పేజీ 1 – Part A',`<div class="g2">${fi('bno','Bill No')}${fi('name','Name')}${fi('desig','Designation')}${fi('pay','Pay Rs. (+DA)')}</div>${fi('hq','Headquarter')}${fi('dtl','5. Details & purpose of journey (మీరు రాసింది అలాగే ప్రింట్ అవుతుంది)')}<div class="jb"><b>Journey details</b> <span class="hint">(ప్రతి ప్రయాణానికి ఒక బాక్స్ – Purpose కూడా ఇందులోనే)</span>${rows}<div class="top"><button id="ba">+ Add journey</button><button id="bd">– Remove last</button></div>${fi('pj','Purpose of Journey (నిలువుగా వస్తుంది)','TRAINING')}</div><div class="g2">${fi('fd','Food: days')}${fi('fr','Food: Rs per day')}${fi('ld','Lodge: days')}${fi('lr','Lodge: Rs per day')}${fi('dd','DA claimed: days')}${fi('dr','DA claimed: Rs per day')}</div>${fi('adv','Advance taken (Rs)')}<div class="hint">Total Fare, Food, Lodge, Net Amount & words ఆటోమేటిక్.</div>`,1)+
+ sec(1,'పేజీ 2 – Items 6 to 9',P2.map(x=>fi(x[0],x[1])).join('')+'<div class="hint">9. Hotel details</div>'+grid('h',HOT,2))+
+ sec(2,'పేజీ 3 – Items 10 to 12',`<div class="hint">10. Higher class journeys</div>${grid('hi',HI,2)}<div class="hint">11. Road journeys between places connected by rail</div>${grid('rd',RD,2)}<div class="hint">12. Advance పేజీ 1 నుంచి ఆటోమేటిక్ గా వస్తుంది (అంకెల్లో మాత్రమే).</div></fieldset></div></details><details open class="t2"><summary>Enclosures &amp; Date</summary><div class="sec"><fieldset><div class="hint">టిక్ చేసినవి మాత్రమే ప్రింట్ అవుతాయి</div>${ENC.map((x,i)=>`<label class="ck"><input type="checkbox" data-k="e${i}" ${D.V['e'+i]?'checked':''}> ${x}</label>`).join('')}${fi('ex','Other enclosure 1')}${fi('ex2','Other enclosure 2')}<label class="ck"><input type="checkbox" data-k="dtOn" ${D.V.dtOn?'checked':''}> Date ప్రింట్ చేయాలి</label>${fi('dt','Date (ఖాళీగా వదిలేస్తే ప్రింట్‌లో ఖాళీ)','dd.mm.yyyy')}`)+
+ `<div class="hint">పేజీ 4 (Part B) – Bill Section కోసం, ఏమీ నింపక్కర్లేదు. డేటా ఈ బ్రౌజర్‌లో ఆటోమేటిక్‌గా సేవ్ అవుతుంది.</div>`;
+ $('#bp').onclick=()=>window.print();
+ $('#br').onclick=()=>{if(confirm('మొత్తం డేటా క్లియర్ చేయాలా?')){D={en:[1,0,0],V:{},rows:[{}]};save();panel();draw()}};
+ $('#ba').onclick=()=>{D.rows.push({...D.rows[D.rows.length-1]});save();panel();draw()};
+ $('#bd').onclick=()=>{if(D.rows.length>1)D.rows.pop();save();panel();draw()};
+}
+const g=(k,p,w)=>`<span class="v" style="min-width:${w||80}px">${D.en[p]?esc(D.V[k]):''}</span>`;
+const gt=(pre,heads,n,p,min)=>{const m=Math.max(n,min);let s=`<table class="t"><tr>${heads.map(h=>`<th>${h}</th>`).join('')}</tr>`;for(let r=0;r<m;r++)s+=`<tr>${heads.map((_,c)=>`<td>${D.en[p]&&r<n?esc(D.V[pre+r+'_'+c]):''}</td>`).join('')}</tr>`;return s+'</table>'};
+function pg1(){const e=D.en[0],V=D.V,R=D.rows,n=Math.max(R.length,6);
+ let fare=0;R.forEach(r=>fare+=parseFloat(r.fare)||0);
+ const fo=(+V.fd||0)*(+V.fr||0),lo=(+V.ld||0)*(+V.lr||0),da=(+V.dd||0)*(+V.dr||0),ad=+V.adv||0,net=fare+fo+lo+da-ad;
+ const sh=x=>e&&x?esc(x):'……';const am=x=>e&&x?x:'';
+ const tr=Array.from({length:n},(_,i)=>{const r=e?R[i]||{}:{};return`<tr>${['d1','t1','fr','d2','t2','to','mode','fare','km','halt'].map(k=>`<td>${esc(/^d\d$/.test(k)?fd(r[k]):r[k])}</td>`).join('')}${i?'':`<td rowspan="${n}" class="vt"><div>${e?esc(V.pj):''}</div></td>`}</tr>`}).join('');
+ const any=e&&(fare||fo||lo||da||ad);
+ return`<div class="pg"><div class="b">BILL NO: ${g('bno',0,150)}</div><div class="b" style="text-align:right">T.R. – 25 – A</div>
+ <h2>TRAVELLING ALLOWANCE BILL FOR TOUR</h2><div class="c b sm">Note: This bill should be prepared in duplicate, one for payment and other as office copy</div>
+ <div class="c b" style="margin-top:6px"><u>PART – A</u></div><div class="c sm">(To be filled by the Government Servant)</div>
+ <div class="id"><div>1. Name: ${g('name',0,190)}</div><div>2. Designation: ${g('desig',0,150)}</div><div>3. Pay Rs. ${g('pay',0,90)} + DA</div><div>4. Headquarter: ${g('hq',0,150)}</div></div>
+ <div>5. Details and purpose of Journey(s) performed: - <span class="v" style="min-width:280px">${e?esc(V.dtl):''}</span></div>
+ <table class="t" style="table-layout:fixed;font-size:8.5pt"><colgroup>${[12.5,7,13.5,12.5,7,13.5,9,6,7,7,5].map(w=>`<col style="width:${w}%">`).join('')}</colgroup><tr><th colspan="3">Departure</th><th colspan="3">Arrival</th><th rowspan="2" style="width:9%">Mode of travel and class of accommodation</th><th rowspan="2">Fare Paid</th><th rowspan="2">Distance in KMs</th><th rowspan="2">Duration of Halt</th><th rowspan="2" style="font-size:6.5pt">Purpose of Journey</th></tr><tr><th>Date</th><th>Time</th><th>From</th><th>Date</th><th>Time</th><th>To</th></tr>${tr}</table>
+ <div class="tot"><span>(+) Total Fare</span><span></span><span>=</span><span>${am(fare)}</span></div>
+ <div class="tot"><span>(+) Food Bill</span><span>( ${e&&V.fd?esc(V.fd):'……'} days × Rs ${e&&V.fr?esc(V.fr):'……'} )</span><span>=</span><span>${am(fo)}</span></div>
+ <div class="tot"><span>(+) Lodge Bill</span><span>( ${e&&V.ld?esc(V.ld):'……'} days × Rs ${e&&V.lr?esc(V.lr):'……'} )</span><span>=</span><span>${am(lo)}</span></div>
+ <div class="tot"><span>(+) DA Claimed</span><span>( ${e&&V.dd?esc(V.dd):'……'} days × Rs ${e&&V.dr?esc(V.dr):'……'} )</span><span>=</span><span>${am(da)}</span></div>
+ <div class="tot"><span>(–) Advance Taken</span><span></span><span>=</span><span>${am(ad)}</span></div>
+ <div class="net"><div class="tot" style="margin:0 -9.5px"><span style="padding-left:9.5px">Net Amount Claimed (in Rs.)</span><span></span><span>=</span><span>${any?net:'…………………'} /-</span></div><div style="text-align:center;margin-top:3px">(Rupees ${any&&net>0?W(net):'……………………………………………'} only)</div></div></div>`}
+function pg2(){return`<div class="pg" style="font-size:9pt;line-height:1.55"><div class="it"><b>6.</b><b style="width:auto">Mode of Journey (s)</b></div>
+ <div class="sub">(i) AIR – (a) Exchange voucher arranged by office ${g('a1',1,200)} Yes / No<br>&emsp;&emsp;&emsp;&emsp;(b) Ticket/Exchange voucher arranged by ${g('a2',1,220)}</div>
+ <div class="sub" style="margin-top:4px">(ii) RAIL – (a) Whether traveled by mail / Express / Ordinary train ${g('r1',1,130)}<br>&emsp;&emsp;&emsp;&emsp;&ensp;(b) Whether return tickets available ${g('r2',1,200)}<br>&emsp;&emsp;&emsp;&emsp;&ensp;(c) If available whether return tickets purchased? If not, state reason ${g('r3',1,200)}</div>
+ <div class="sub" style="margin-top:4px">(iii) ROAD – Mode of conveyance used (i.e. by Government transport / by taking a taxi, a single seat in a bus or other in a public conveyance, by sharing with another Government servant in a car belonging to him or to a third person to be specified) ${g('rd',1,300)}</div>
+ <div class="it" style="margin-top:8px"><b>7.</b><span>Dates of absence from place of halt on account of :</span></div>
+ <div class="sub">(a) Restricted Holidays and Casual Leave ${g('s7a',1,260)}<br>(b) Note being actually in camp on Sundays and Holidays ${g('s7b',1,220)}</div>
+ <div class="it" style="margin-top:8px"><b>8.</b><span>Dates on which free board and/or lodging provided by the State or any organization financed by State funds:</span></div>
+ <div class="sub">(a) Board only: ${g('s8a',1,300)}<br>(b) Lodging only: ${g('s8b',1,300)}<br>(c) Boarding and lodging: ${g('s8c',1,260)}</div>
+ <div class="it" style="margin-top:8px"><b>9.</b><span>Particulars to be furnished along with hotel receipts etc, in cases where higher rate of Daily Allowance is claimed for stay in hotel/other establishments providing board and/or lodging at scheduled tariff:</span></div>${gt('h',HOT,2,1,9)}</div>`}
+function pg3(){const e=D.en[2],V=D.V;const enc=ENC.filter((_,i)=>V['e'+i]).concat(V.ex?[V.ex]:[],V.ex2?[V.ex2]:[]);
+ return`<div class="pg" style="font-size:9pt"><div class="it"><b>10.</b><span>Particulars of Journey(s) for which higher class of accommodation than one to which the Government servant is entitled to was used.</span></div>${gt('hi',HI,2,2,8)}
+ <div class="sm" style="margin:6px 0 14px">NOTE: If the journey by higher class of accommodation has been performed with the approval of the competent authority, the number and date of sanction may be quoted.</div>
+ <div class="it"><b>11.</b><span>Details of Journey(s) performed by road between places connected by rail.</span></div>${gt('rd',RD,2,2,4)}
+ <div class="it" style="margin-top:14px"><b>12.</b><span>Amount of Advance of Travelling Allowance, if any, drawn. &emsp;&emsp;&emsp; Rs <span class="v" style="min-width:90px">${D.en[0]&&V.adv?esc(V.adv):''}</span> /-</span></div>
+ <p style="margin:16px 0 18px 28px">Certified that the information, as given above, is true to the best of my knowledge and belief.</p>
+ <div>Enclosures:</div><div style="min-height:70px">${enc.map((x,i)=>`<div style="margin-left:12px">${i+1}. ${esc(x)}</div>`).join('')}</div>
+ <div style="display:flex;justify-content:space-between;margin-top:40px"><span>Date: <span class="v" style="min-width:110px">${V.dtOn?esc(V.dt):''}</span></span><span class="c">…………………………………<br>Signature of the Government Servant</span></div></div>`}
+function pg4(){const d=n=>'<span class="v" style="min-width:'+n+'px"></span>';
+ return`<div class="pg pb"><div class="c b"><u>PART – B</u></div><div class="c" style="margin-bottom:22px">(To be filled by the Bill Section)</div>
+ <b>1</b>. The net entitlement on account of Travelling Allowance work out to Rs ${d(110)} (Rupees ${d(160)} ${d(260)}) as detailed below:
+ <div class="sub">(a) Railway / Air / Bus / Steamer fares ${d(100)}<br>(b) Road mileage for ${d(110)} Km. @ Rs ${d(90)} Paisa / Km.<br>(c) <b>Daily Allowance</b> :<br>${['(i)','(ii)','(iii)','(iv)'].map(x=>`&emsp;${x} ${d(60)} days @ Rs ${d(70)} Per day Rs ${d(80)}<br>`).join('')}(d) Actual expenses ${d(130)}</div>
+ <div style="text-align:right;margin-right:60px">Gross Amount ${d(130)}</div>
+ <div class="sub">(e) Less amount of advance(s) of Travelling Allowance, if any, drawn vide Voucher(s) No. ${d(80)} dated ${d(110)}</div><div style="text-align:right;margin-right:60px">Net Amount ${d(130)}</div>
+ <p><b>2</b>. The expenditure is debitable to ${d(300)}</p>
+ <div style="display:flex;justify-content:space-between;margin-top:40px"><span class="c">…………………………<br>Bill Clerk<br>(initial)</span><span class="c">…………………………………<br>Drawing and Disbursing Officer<br>(Signature)</span></div>
+ <div class="c" style="margin-top:34px">Countersigned<br><br>…………………………………<br>Controlling Officer<br>(Signature)</div></div>`}
+const draw=()=>{$('#prev').innerHTML=pg1()+pg2()+pg3()+pg4()};
+document.addEventListener('input',e=>{const t=e.target;if(t.dataset.k!=null){D.V[t.dataset.k]=t.type==='checkbox'?t.checked:t.value}else if(t.dataset.r!=null){D.rows[+t.dataset.r][t.dataset.f]=t.value}else return;save();draw()});
+document.addEventListener('change',e=>{const t=e.target;if(t.dataset.en!=null){D.en[+t.dataset.en]=t.checked?1:0;$('#fs'+t.dataset.en).disabled=!t.checked;save();draw()}else if(t.dataset.k&&t.type==='checkbox'){D.V[t.dataset.k]=t.checked;save();draw()}});
+document.addEventListener('click',e=>{const b=e.target.closest('[data-act]');if(!b)return;const i=+b.dataset.i,a=b.dataset.act,r=D.rows[i];if(a==='del'){if(D.rows.length>1)D.rows.splice(i,1);else D.rows[0]={}}else{const c={...r};if(a==='ret'){c.fr=r.to;c.to=r.fr}D.rows.splice(i+1,0,c)}save();panel();draw()});
+let TAB=0;const fit=()=>{const w=innerWidth;$('#prev').style.zoom=w<980?Math.min(1,(w-20)/794):1};const setTab=t=>{TAB=t;$('#app').dataset.t=t;document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('on',+b.dataset.tab===t));$('#panel').scrollTop=0;scrollTo(0,0);fit()};
+document.addEventListener('click',e=>{const b=e.target.closest('#nav button');if(b)setTab(+b.dataset.tab)});addEventListener('resize',fit);
+panel();draw();setTab(0);
+</script></body></html>
